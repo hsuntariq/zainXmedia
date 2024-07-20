@@ -1,0 +1,150 @@
+:root {
+  --primary: #15171c;
+  --secondary: #dd4242;
+  --smooth: all 0.3s;
+}
+body {
+  background-color: var(--primary);
+  color: white !important;
+}
+
+.icon {
+  color: var(--secondary);
+  transition: var(--smooth);
+}
+
+.my-button {
+  background-color: transparent;
+  transition: var(--smooth);
+}
+
+.btn-content {
+  transition: var(--smooth);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.my-button:hover {
+  border-color: var(--secondary) !important;
+}
+
+.my-button:hover .icon {
+  color: white;
+  scale: 1.1;
+}
+.my-button:hover .btn-content {
+  color: var(--secondary) !important;
+}
+
+.x {
+  color: var(--secondary);
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.line-parent {
+  cursor: pointer;
+}
+
+.line {
+  width: 40px;
+  height: 3px;
+  background-color: white;
+  rotate: -45deg;
+}
+
+.line3 {
+  transition: var(--smooth);
+}
+
+.line2 {
+  transform: translate(5px);
+  transition: var(--smooth);
+}
+.line1 {
+  transform: translate(-20px);
+  transition: var(--smooth);
+}
+
+.line-parent:hover .line2 {
+  transform: translate(-12px) !important;
+  background-color: var(--secondary);
+}
+.line-parent:hover .line1 {
+  transform: translate(-20px, 3px) !important;
+}
+.line-parent:hover .line3 {
+  transform: translateY(-3px) !important;
+}
+
+.pop-up {
+  background-color: var(--primary);
+  z-index: 111;
+}
+
+.blob-image {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  transition: all 0.1s;
+  animation: blob 5s infinite ease-in-out;
+}
+
+@keyframes blob {
+  0% {
+    border-radius: 58% 53% 24% 75% / 61% 76% 24% 47%;
+  }
+  25% {
+    border-radius: 57% 43% 20% 80% / 57% 83% 17% 43%;
+  }
+  50% {
+    border-radius: 79% 21% 44% 56% / 37% 23% 77% 63%;
+  }
+  75% {
+    border-radius: 35% 65% 75% 25% / 76% 55% 45% 24%;
+  }
+  100% {
+    border-radius: 58% 53% 24% 75% / 61% 76% 24% 47%;
+  }
+}
+
+.stroke {
+  -webkit-text-stroke: 1px white;
+  font-size: 5.5rem;
+  font-weight: 900;
+  transition: all 0.6s;
+  cursor: pointer;
+  color: transparent;
+  margin: 1.5rem 0;
+}
+
+.stroke:hover {
+  color: var(--secondary);
+  -webkit-text-stroke: 1px var(--secondary);
+  letter-spacing: 2px;
+  scale: 1.05;
+}
+
+.stroke:nth-child(2) {
+  margin-left: 3rem;
+}
+.stroke:nth-child(3) {
+  margin-left: 7rem;
+}
+.stroke:nth-child(4) {
+  margin-left: 2rem;
+}
+.stroke:nth-child(5) {
+  margin-left: -1rem;
+}
+
+.stroke-items {
+  margin-left: -4rem !important;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.blob-image {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
