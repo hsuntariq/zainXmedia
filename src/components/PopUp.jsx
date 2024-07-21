@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import { imageData } from "../data/image_data";
+import SingleImage from "./SingleImage";
 
 const PopUp = ({ setOpen }) => {
   const [showClose, setShowClose] = useState(false);
@@ -8,16 +9,16 @@ const PopUp = ({ setOpen }) => {
   return (
     <>
       <div
-        className="container-fluid d-flex align-items-center justify-content-center pop-up position-fixed top-0"
+        className="container-fluid pop position-relative d-flex align-items-center justify-content-center pop-up position-fixed top-0 "
         style={{
-          width: "100vw",
-          height: "100vh",
+          width: "100%",
+          height: "100%",
         }}
       >
         <div
           onMouseEnter={() => setShowClose(true)}
           onMouseLeave={() => setShowClose(false)}
-          className="close position-absolute p-4 bg-info"
+          className="close position-absolute p-4 "
           style={{
             top: "10px",
             right: "10px",
@@ -47,37 +48,24 @@ const PopUp = ({ setOpen }) => {
 
         <div className="blob-images w-50  position-relative  ">
           {imageData?.map((item, index) => {
-            return (
-              <img
-                style={{
-                  transition: "all 0.7s",
-                  scale: `${image == "blog" ? "1" : "1.2"}`,
-                  opacity: `${image == "blog" ? "1" : "0"}`,
-                }}
-                className="d-block blob-image position-absolute "
-                src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Contact-Img.png"
-                alt=""
-              />
-            );
+            return <SingleImage key={index} {...item} image={image} />;
           })}
         </div>
 
         <ul className="list-unstyled stroke-items display-1 text-uppercase w-25">
-          <li className="stroke" onMouseOver={() => setImage("blog")}>
-            blog
-          </li>
-          <li className="stroke" onMouseOver={() => setImage("career")}>
-            career
-          </li>
-          <li className="stroke" onMouseOver={() => setImage("contact")}>
-            contact
-          </li>
-          <li className="stroke" onMouseOver={() => setImage("services")}>
-            services
-          </li>
-          <li className="stroke" onMouseOver={() => setImage("projects")}>
-            projects
-          </li>
+          {imageData?.map((item, index) => {
+            return (
+              <>
+                <li
+                  key={index}
+                  className="stroke"
+                  onMouseOver={() => setImage(item?.name)}
+                >
+                  {item?.name}
+                </li>
+              </>
+            );
+          })}
         </ul>
       </div>
     </>

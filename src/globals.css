@@ -1,11 +1,12 @@
 :root {
-  --primary: #15171c;
+  --primary: #111319;
   --secondary: #dd4242;
   --smooth: all 0.3s;
 }
 body {
   background-color: var(--primary);
   color: white !important;
+  overflow-x: hidden !important;
 }
 
 .icon {
@@ -137,6 +138,7 @@ body {
 
 .stroke-items {
   margin-left: -4rem !important;
+  z-index: 2222;
 }
 
 .close {
@@ -147,4 +149,138 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.menu-close {
+  padding: 10px;
+}
+
+.bar {
+  transform: translateX(5px);
+  opacity: 0;
+  transition: all 0.3s;
+  display: none;
+}
+
+.menu-close {
+  display: none;
+}
+
+.arrow-right {
+  display: none;
+}
+
+.front-image {
+  scale: 1.2;
+  position: relative;
+  z-index: -3222222 !important;
+}
+
+.header {
+  z-index: 7777 !important;
+}
+
+.bar-front {
+  width: 70px !important;
+  height: 1px;
+  background: var(--bs-secondary);
+}
+
+.scaling {
+  transition: all 0.5s;
+  animation: scale-up 0.6s infinite linear alternate-reverse !important;
+}
+
+.text-red {
+  color: var(--secondary) !important;
+}
+
+@keyframes scale-up {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.2;
+  }
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #dd4242;
+  border-radius: 50%;
+}
+
+/* screen size 1200px */
+
+@media only screen and (max-width: 1200px) {
+  .active {
+    background-color: var(--secondary);
+  }
+
+  .bar,
+  .menu-close,
+  .arrow-right {
+    display: block;
+  }
+  .items {
+    background: #15171c !important;
+    position: fixed !important;
+    top: 0;
+    height: 100vh;
+    width: 23%;
+    right: 0;
+    z-index: 222;
+    font-size: 1.2rem;
+    font-weight: normal;
+    /* padding: 2rem; */
+    flex-direction: column;
+    gap: 0 !important;
+  }
+
+  .my-item {
+    padding: 10px !important;
+    transition: all 0.7s;
+  }
+
+  .my-item:hover {
+    background-color: var(--secondary);
+    scale: 1.03;
+  }
+
+  .my-item:hover .bar {
+    opacity: 1;
+    transform: translateX(14px);
+  }
+
+  .items li {
+    border-bottom: 1px solid rgb(70, 69, 69);
+  }
+}
+
+/* screen size 1024px */
+
+@media only screen and (max-width: 1024px) {
+  .blob-images {
+    position: absolute;
+    top: 0%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+  }
+
+  .stroke-items {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+  }
+
+  .stroke-items li {
+    font-size: 4rem !important;
+    margin: 1rem 0 !important;
+  }
+
+  .blob-image {
+    width: 700px;
+  }
 }
