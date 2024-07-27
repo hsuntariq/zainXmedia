@@ -10,11 +10,11 @@ import { GoChevronRight } from "react-icons/go";
 const Header = ({ open, setOpen }) => {
   return (
     <>
-      <div className="d-flex p-4 justify-content-around align-items-center">
+      <div className="d-flex p-4 justify-content-around header align-items-center">
         <div className="logo d-flex align-items-center">
           <GoDotFill size={25} color="#dd4242" />
-          <div className="d-flex align-items-center">
-            <h2 className="m-0">Zain</h2>
+          <div className="d-flex  align-items-center">
+            <h2 className="m-0 text-white">Zain</h2>
             <span className="x">X</span>
           </div>
 

@@ -3,9 +3,22 @@
   --secondary: #dd4242;
   --smooth: all 0.3s;
 }
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: (red, orange);
+}
+
 body {
-  background-color: var(--primary);
+  background-color: black;
   color: white !important;
+  overflow-x: hidden !important;
+}
+
+html {
   overflow-x: hidden !important;
 }
 
@@ -170,10 +183,26 @@ body {
   display: none;
 }
 
+.header {
+  z-index: 111;
+  backdrop-filter: blur(10px);
+}
+
 .front-image {
-  scale: 1.2;
+  scale: 1.1;
   position: relative;
   z-index: -3222222 !important;
+  animation: scale-up2 2s infinite alternate-reverse;
+  transition: all 0.7s;
+}
+
+@keyframes scale-up2 {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 
 .header {
@@ -211,11 +240,136 @@ body {
   border-radius: 50%;
 }
 
+.my-bar {
+  width: 50px;
+  height: 1px;
+  background-color: lightgray;
+  transition: all 0.7s;
+}
+.my-bar2 {
+  width: 0px;
+  height: 1px;
+  background-color: lightgray;
+  transition: all 0.7s;
+}
+
+.hov {
+  transition: all 0.7s;
+}
+
+.hov:hover .my-bar {
+  width: 0;
+}
+.hov:hover .my-bar2 {
+  width: 50px;
+}
+
+.video-icon {
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary);
+  position: relative;
+}
+
+.video-icon::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(221, 66, 66, 0.6);
+  position: absolute;
+  z-index: -111;
+  animation: play 2s infinite;
+  transition: all 0.7s;
+}
+
+.bar3 {
+  width: 1px;
+  height: 50px;
+  background-color: lightgray;
+}
+.bar3-bar {
+  width: 1px;
+  height: 50px;
+  background-color: lightgray;
+  animation: big-small 1s infinite linear alternate-reverse;
+}
+
+.bar-gallery {
+  width: 60px;
+  height: 1px;
+  background-color: lightgray;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  bottom: 0%;
+  position: absolute;
+  color: white;
+  /* padding: 3rem; */
+  transition: all 0.5s;
+  height: 0;
+  /* opacity: 0; */
+}
+
+.text-red {
+  color: var(--secondary);
+}
+
+.gallery-card {
+  overflow: hidden;
+}
+
+.gallery-card:hover .overlay {
+  height: 50%;
+  opacity: 1;
+}
+
+@keyframes big-small {
+  from {
+    height: 50px;
+  }
+  to {
+    height: 0;
+  }
+}
+
+.scroll-text {
+  transform: rotate(270deg);
+  letter-spacing: 5px;
+}
+
+@keyframes play {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: inset 0px 0px 10px 3px rgba(var(--wdtPrimaryColorRgb), 1),
+      0px 0px 10px 3px rgba(var(--wdtPrimaryColorRgb), 0.2);
+  }
+  100% {
+    -webkit-transform: scale(1.6);
+    transform: scale(1.6);
+    opacity: 0;
+    box-shadow: none;
+  }
+}
+
 /* screen size 1200px */
 
 @media only screen and (max-width: 1200px) {
   .active {
     background-color: var(--secondary);
+  }
+  .header {
+    backdrop-filter: none;
+  }
+
+  .my-button {
+    display: none;
   }
 
   .bar,
@@ -236,6 +390,7 @@ body {
     /* padding: 2rem; */
     flex-direction: column;
     gap: 0 !important;
+    transform: translateX(100%);
   }
 
   .my-item {
@@ -255,6 +410,31 @@ body {
 
   .items li {
     border-bottom: 1px solid rgb(70, 69, 69);
+  }
+
+  .front-image {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+  .front-image img {
+    scale: 1 !important;
+  }
+
+  .main {
+    height: 80vh !important;
+    backdrop-filter: blur(5px);
+    background-image: linear-gradient(
+        rgba(47, 47, 47, 0.6),
+        rgba(58, 57, 57, 0.6)
+      ),
+      url("https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Slider-1-Image-1-2048x1796.jpg");
+    background-position: center 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 444;
   }
 }
 
