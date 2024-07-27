@@ -424,7 +424,7 @@ html {
   }
 
   .main {
-    height: 80vh !important;
+    height: 100vh !important;
     backdrop-filter: blur(5px);
     background-image: linear-gradient(
         rgba(47, 47, 47, 0.6),
