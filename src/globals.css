@@ -12,6 +12,11 @@
   background-color: (red, orange);
 }
 
+::selection {
+  background-color: #dd4242;
+  color: white;
+}
+
 body {
   background-color: black;
   color: white !important;
@@ -356,6 +361,22 @@ html {
     opacity: 0;
     box-shadow: none;
   }
+}
+
+.my-dot {
+  width: 100px;
+  height: 100px;
+  background-color: #dd4242;
+  border-radius: 50%;
+  z-index: -1;
+  top: -10%;
+  left: -5%;
+}
+
+.text-anim {
+  background-image: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHI2MDF0N29ua3AwcjJ0b3UxZmFrNjMwcjhpc3FlbjBwNGVwcno1dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oz8xGDDJLZAMGqG08/giphy.webp");
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 /* screen size 1200px */
