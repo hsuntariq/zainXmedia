@@ -425,7 +425,6 @@ html {
 
   .main {
     height: 100vh !important;
-    backdrop-filter: blur(5px);
     background-image: url("./assets/images/image.png");
     background-position: center 50%;
     background-size: contain;
