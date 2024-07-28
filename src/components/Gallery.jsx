@@ -2,13 +2,6 @@ import React from "react";
 import Dot from "./Dot";
 import SlidingDiv from "./SlidingDiv";
 import Cards from "./Cards";
-import Animated from "./Animated";
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 const Gallery = () => {
   return (
     <>
@@ -21,7 +14,7 @@ const Gallery = () => {
           <div className="bar-gallery"></div>
         </header>
         <h2 className="text-center display-1 fw-bold m-0 p-0">
-          <Animated word1="Our" word2="Project" word3="Portfolio" />
+          Our Project Portfolio
         </h2>
         <div className="row m-0 justify-content-center align-items-center">
           <div className="col-lg-3 col-sm-6">
