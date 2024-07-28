@@ -44,6 +44,7 @@ const Front = () => {
                   </div>
                   <p className="text-secondary m-0">Innovative Ideas</p>
                 </div>
+
                 <h1 className="display-3 fw-bold ">
                   We Offer You <span className="text-red">A Digital</span>{" "}
                   Platform <GoDotFill size={25} color="#dd4242" />

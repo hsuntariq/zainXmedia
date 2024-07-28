@@ -6,9 +6,12 @@ import Group from "../components/Group";
 import { Particless } from "../components/Particles";
 import Gallery from "../components/Gallery";
 import Projects from "../components/Projects";
+import Animated from "../components/Animated";
+import Advertisment from "../components/Advertisment";
 
 const Home = () => {
   const [open, setOpen] = useState(false);
+
   return (
     <>
       <Particless />
@@ -20,6 +23,7 @@ const Home = () => {
       <Group />
       <Gallery />
       <Projects />
+      <Advertisment />
     </>
   );
 };

@@ -201,6 +201,16 @@ html {
   transition: all 0.7s;
 }
 
+.text-stroke {
+  -webkit-text-stroke: 1px white;
+  font-size: 8rem;
+  font-weight: 900;
+  transition: all 0.6s;
+  cursor: pointer;
+  color: transparent;
+  margin: 1.5rem 0;
+}
+
 @keyframes scale-up2 {
   from {
     transform: scale(1.1);
