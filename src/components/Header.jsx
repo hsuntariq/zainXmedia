@@ -6,6 +6,7 @@ import { FaChevronRight } from "react-icons/fa6";
 import { menu_data } from "../data/menu_data";
 import { MdHorizontalRule } from "react-icons/md";
 import { GoChevronRight } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 const Header = ({ open, setOpen }) => {
   return (
@@ -28,17 +29,18 @@ const Header = ({ open, setOpen }) => {
             return (
               <>
                 <li key={index}>
-                  <div
-                    className={`d-flex my-item justify-content-between ${
+                  <Link
+                    to={item.link}
+                    className={`d-flex my-item text-decoration-none text-white justify-content-between ${
                       item == "Home" && "active"
                     } align-items-center`}
                   >
-                    <h6>{item}</h6>
+                    <h6>{item.name}</h6>
                     <div className="menu-icon d-flex align-items-center">
                       <MdHorizontalRule className="bar" />
                       <GoChevronRight className="arrow-right" />
                     </div>
-                  </div>
+                  </Link>
                 </li>
               </>
             );

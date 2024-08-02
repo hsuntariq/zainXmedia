@@ -16,8 +16,6 @@ const PopUp = ({ setOpen }) => {
         }}
       >
         <div
-          onMouseEnter={() => setShowClose(true)}
-          onMouseLeave={() => setShowClose(false)}
           className="close position-absolute p-4 "
           style={{
             top: "10px",
@@ -29,21 +27,9 @@ const PopUp = ({ setOpen }) => {
             size={40}
             style={{
               transition: "all 0.4s",
-              scale: `${showClose ? "0" : "1"}`,
             }}
+            onClick={() => setOpen(false)}
           />
-        </div>
-        <div
-          onClick={() => setOpen(false)}
-          style={{
-            top: "15px",
-            right: "10px",
-            transition: "all 0.4s",
-            scale: `${showClose ? "1" : "0"}`,
-          }}
-          className="close fw-bolder position-absolute p-4  text-danger"
-        >
-          CLOSE
         </div>
 
         <div className="blob-images w-50  position-relative  ">
